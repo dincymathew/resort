@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-serif-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+  .font-cinzel {
+    font-family: 'Cinzel', serif;
+  }
+  .font-sans-body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #080d0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e3a2b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2d5a42;
+}
+
+/* Custom Animations */
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes mistDrift {
+  0% { transform: translateX(-10%); opacity: 0.3; }
+  50% { transform: translateX(5%); opacity: 0.6; }
+  100% { transform: translateX(-10%); opacity: 0.3; }
+}
+
+.animate-float-slow {
+  animation: floatGentle 6s ease-in-out infinite;
+}
+
+.animate-mist {
+  animation: mistDrift 20s ease-in-out infinite;
+}
+
+/* Glass effect */
+.glass-panel {
+  background: rgba(18, 30, 23, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Leaflet Map Overrides for dark theme */
+.leaflet-container {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  background-color: #0d1712 !important;
+  border-radius: 1rem;
+}
+.leaflet-popup-content-wrapper {
+  background: #112018 !important;
+  color: #e2e8f0 !important;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 0.75rem !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
+}
+.leaflet-popup-tip {
+  background: #112018 !important;
+}
+.leaflet-control-zoom a {
+  background-color: #112018 !important;
+  color: #e2e8f0 !important;
+  border-color: rgba(212, 175, 55, 0.2) !important;
+}
+.leaflet-control-zoom a:hover {
+  background-color: #1b3326 !important;
+}
