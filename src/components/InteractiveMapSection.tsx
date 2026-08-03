@@ -71,7 +71,7 @@ export const InteractiveMapSection: React.FC = () => {
           <img src="${attraction.image}" style="width: 100%; height: 110px; object-fit: cover; border-radius: 8px; margin-bottom: 8px;" referrerPolicy="no-referrer"/>
           <strong style="font-size: 14px; color: #fef08a; display: block;">${attraction.name}</strong>
           <span style="font-size: 11px; color: #94a3b8; display: block; margin-top: 2px;">
-            ${isResort ? '★ Munnar Mist Resort Base' : `${attraction.distanceKm} km from Resort (${attraction.driveTimeMin} min drive)`}
+            ${isResort ? '★ munnar Resort Base' : `${attraction.distanceKm} km from Resort (${attraction.driveTimeMin} min drive)`}
           </span>
           <p style="font-size: 11px; color: #cbd5e1; margin-top: 6px; line-height: 1.4;">${attraction.description}</p>
         </div>
@@ -193,11 +193,10 @@ export const InteractiveMapSection: React.FC = () => {
                 <button
                   key={cat}
                   onClick={() => setActiveCategoryFilter(cat)}
-                  className={`text-xs px-3 py-1.5 rounded-full border transition-all ${
-                    activeCategoryFilter === cat
+                  className={`text-xs px-3 py-1.5 rounded-full border transition-all ${activeCategoryFilter === cat
                       ? 'bg-amber-500 text-slate-950 font-bold border-amber-400'
                       : 'bg-[#122319] text-slate-300 border-emerald-900/60 hover:border-emerald-700'
-                  }`}
+                    }`}
                 >
                   {cat}
                 </button>
@@ -267,11 +266,10 @@ export const InteractiveMapSection: React.FC = () => {
                 <button
                   key={att.id}
                   onClick={() => handleSelectAttraction(att)}
-                  className={`w-full text-left p-3 rounded-xl border transition-all flex items-center justify-between ${
-                    selectedAttraction.id === att.id
+                  className={`w-full text-left p-3 rounded-xl border transition-all flex items-center justify-between ${selectedAttraction.id === att.id
                       ? 'bg-emerald-950 border-amber-400/80 text-white shadow-lg'
                       : 'bg-[#0e1a13] border-emerald-900/40 text-slate-300 hover:bg-[#13251c]'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center gap-3">
                     <img

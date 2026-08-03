@@ -1,6 +1,8 @@
 {
-  "name": "Munnar Mist Resort & Spa",
+  "name": "munnar Resort & Spa",
   "description": "Luxury tea hill resort in Munnar, Kerala with WhatsApp booking, interactive map, snowfall mist effect, parallax scrolling, moving elephant animation, and gallery.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

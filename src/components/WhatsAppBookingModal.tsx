@@ -87,7 +87,7 @@ export const WhatsAppBookingModal: React.FC<WhatsAppBookingModalProps> = ({
 📧 *Email:* ${formData.email || 'N/A'}
 💬 *Special Notes:* ${formData.specialRequests || 'Honeymoon / Relaxing retreat stay'}
 
-_Sent via Munnar Mist Resort Official Web Portal_`;
+_Sent via munnar Resort Official Web Portal_`;
 
     return `https://wa.me/${RESORT_CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`;
   };
@@ -245,18 +245,16 @@ _Sent via Munnar Mist Resort Official Web Portal_`;
                       type="button"
                       key={addon}
                       onClick={() => handleAddonToggle(addon)}
-                      className={`flex items-center gap-2.5 text-xs text-left p-2.5 rounded-xl border transition-all ${
-                        checked
+                      className={`flex items-center gap-2.5 text-xs text-left p-2.5 rounded-xl border transition-all ${checked
                           ? 'bg-emerald-900/60 border-amber-400/60 text-amber-200'
                           : 'bg-[#16271e]/50 border-emerald-900/50 text-slate-400 hover:text-slate-200'
-                      }`}
+                        }`}
                     >
                       <div
-                        className={`w-4 h-4 rounded flex items-center justify-center border text-[10px] ${
-                          checked
+                        className={`w-4 h-4 rounded flex items-center justify-center border text-[10px] ${checked
                             ? 'bg-amber-400 border-amber-300 text-slate-950 font-bold'
                             : 'border-slate-600'
-                        }`}
+                          }`}
                       >
                         {checked && <Check className="w-3 h-3 stroke-[3]" />}
                       </div>

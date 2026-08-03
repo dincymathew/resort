@@ -14,10 +14,10 @@ export const FloatingWhatsAppFAB: React.FC<FloatingWhatsAppFABProps> = ({ onOpen
     'Is Mist Pool Villa available this weekend?',
     'Can I get Honeymoon package details?',
     'How do I reach the resort from Cochin Airport?',
-      ];
+  ];
 
   const handleSendQuickQuery = (queryText: string) => {
-    const text = `Hi Munnar Mist Resort! ${queryText}`;
+    const text = `Hi munnar Resort! ${queryText}`;
     const url = `https://wa.me/${RESORT_CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank', 'noopener,noreferrer');
   };
@@ -52,7 +52,7 @@ export const FloatingWhatsAppFAB: React.FC<FloatingWhatsAppFABProps> = ({ onOpen
           {/* Body */}
           <div className="p-4 space-y-3 max-h-72 overflow-y-auto">
             <div className="bg-[#14281c] p-3 rounded-xl border border-emerald-800/60 text-xs text-slate-200">
-              <p className="font-semibold text-amber-300">Namaste! 👋 Welcome to Munnar Mist Resort.</p>
+              <p className="font-semibold text-amber-300">Namaste! 👋 Welcome to munnar Resort.</p>
               <p className="mt-1">How can our resort team assist your Munnar vacation today?</p>
             </div>
 

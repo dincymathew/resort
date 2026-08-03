@@ -18,11 +18,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenWhatsAppBooking }) => {
                 🍃
               </div>
               <span className="font-cinzel text-lg font-bold text-white tracking-wider">
-                Munnar Mist
+                munnar
               </span>
             </div>
             <p className="text-xs text-slate-400 leading-relaxed mb-4">
-              Luxury eco-heritage resort 
+              Luxury eco-heritage resort
             </p>
             <div className="flex items-center gap-2 text-xs text-amber-400 font-cinzel">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
