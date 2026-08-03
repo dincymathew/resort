@@ -20,34 +20,67 @@ export const ElephantHerdEffect: React.FC<ElephantHerdProps> = ({ isTriggered, o
       setAudioContext(ctx);
 
       if (ctx.state === 'suspended') {
-        ctx.resume().catch(() => {
-          // Ignore error if user hasn't interacted with page yet
-        });
+        ctx.resume().catch(() => {});
       }
 
-      // If context is still suspended after trying to resume, we shouldn't try to play
       if (ctx.state === 'suspended') return;
 
-      // Low frequency trumpet call synth
-      const osc = ctx.createOscillator();
+      const startTime = ctx.currentTime;
+      const duration = 2.0;
+
+      // Create oscillators for a richer, more complex sound
+      const osc1 = ctx.createOscillator();
+      const osc2 = ctx.createOscillator();
       const gain = ctx.createGain();
+      
+      // LFO for vibrato effect typical in elephant trumpets
+      const lfo = ctx.createOscillator();
+      const lfoGain = ctx.createGain();
 
-      osc.type = 'sawtooth';
-      osc.frequency.setValueAtTime(110, ctx.currentTime);
-      osc.frequency.exponentialRampToValueAtTime(180, ctx.currentTime + 0.3);
-      osc.frequency.exponentialRampToValueAtTime(90, ctx.currentTime + 1.2);
+      osc1.type = 'sawtooth';
+      osc2.type = 'square';
+      lfo.type = 'sine';
 
-      gain.gain.setValueAtTime(0.01, ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.15, ctx.currentTime + 0.2);
-      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 1.5);
+      // LFO frequency (vibrato speed) and depth
+      lfo.frequency.value = 12; // 12Hz vibrato
+      lfoGain.gain.value = 30; // 30Hz pitch variation
 
-      osc.connect(gain);
+      // Connect LFO to oscillator frequencies
+      lfo.connect(lfoGain);
+      lfoGain.connect(osc1.frequency);
+      lfoGain.connect(osc2.frequency);
+
+      // Frequency envelope for trumpet
+      [osc1, osc2].forEach(osc => {
+        osc.frequency.setValueAtTime(250, startTime);
+        osc.frequency.exponentialRampToValueAtTime(500, startTime + 0.3);
+        osc.frequency.exponentialRampToValueAtTime(450, startTime + 0.8);
+        osc.frequency.exponentialRampToValueAtTime(150, startTime + duration);
+      });
+
+      // Detune osc2 for a thicker sound
+      osc2.detune.value = 20;
+
+      // Amplitude envelope
+      gain.gain.setValueAtTime(0, startTime);
+      gain.gain.linearRampToValueAtTime(0.2, startTime + 0.1);
+      gain.gain.linearRampToValueAtTime(0.15, startTime + 0.8);
+      gain.gain.exponentialRampToValueAtTime(0.001, startTime + duration);
+
+      osc1.connect(gain);
+      osc2.connect(gain);
       gain.connect(ctx.destination);
 
-      osc.start();
-      osc.stop(ctx.currentTime + 1.5);
+      lfo.start(startTime);
+      osc1.start(startTime);
+      osc2.start(startTime);
+
+      lfo.stop(startTime + duration);
+      osc1.stop(startTime + duration);
+      osc2.stop(startTime + duration);
+      
       setIsPlayingSound(true);
-      setTimeout(() => setIsPlayingSound(false), 2000);
+      setTimeout(() => setIsPlayingSound(false), duration * 1000);
     } catch (err) {
       // Audio fallback gracefully
       console.warn("AudioContext couldn't start:", err);
@@ -99,10 +132,10 @@ export const ElephantHerdEffect: React.FC<ElephantHerdProps> = ({ isTriggered, o
       {/* Moving Herd SVG Container */}
       <div className="relative w-full h-32 md:h-44">
         <motion.div
-          initial={{ x: '-100%' }}
+          initial={{ x: '-100vw' }}
           animate={{ x: '110vw' }}
           transition={{
-            duration: 18,
+            duration: 25, // Slower, more natural crossing
             ease: 'linear',
             repeat: 0,
           }}
@@ -111,12 +144,12 @@ export const ElephantHerdEffect: React.FC<ElephantHerdProps> = ({ isTriggered, o
           {/* Big Papa Elephant */}
           <motion.div
             animate={{
-              y: [0, -4, 0, -2, 0],
-              rotate: [0, 1, 0, -1, 0],
+              y: [0, -3, 0, -2, 0],
+              rotate: [0, 1, 0, -0.5, 0],
             }}
             transition={{
               repeat: Infinity,
-              duration: 1.2,
+              duration: 2.5, // Slower heavy steps for the big bull
               ease: 'easeInOut',
             }}
             className="relative drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]"
@@ -150,12 +183,12 @@ export const ElephantHerdEffect: React.FC<ElephantHerdProps> = ({ isTriggered, o
           {/* Mama Elephant */}
           <motion.div
             animate={{
-              y: [0, -3, 0, -3, 0],
-              rotate: [0, -1, 0, 1, 0],
+              y: [0, -2.5, 0, -2, 0],
+              rotate: [0, -0.5, 0, 0.5, 0],
             }}
             transition={{
               repeat: Infinity,
-              duration: 1.1,
+              duration: 2.2, // Slightly faster than the big bull
               ease: 'easeInOut',
               delay: 0.1,
             }}
@@ -179,12 +212,12 @@ export const ElephantHerdEffect: React.FC<ElephantHerdProps> = ({ isTriggered, o
           {/* Cute Baby Elephant following mom! */}
           <motion.div
             animate={{
-              y: [0, -5, 0, -5, 0],
-              rotate: [0, 2, 0, -2, 0],
+              y: [0, -4, 0, -3, 0],
+              rotate: [0, 2, 0, -1.5, 0],
             }}
             transition={{
               repeat: Infinity,
-              duration: 0.8,
+              duration: 1.2, // Faster steps for the baby calf
               ease: 'easeInOut',
             }}
             className="relative drop-shadow-[0_8px_16px_rgba(0,0,0,0.8)]"

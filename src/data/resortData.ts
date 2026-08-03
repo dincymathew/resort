@@ -1,12 +1,12 @@
-import { Room, GalleryItem, MapAttraction, Testimonial, DiningItem, WeatherData } from '../types';
+import { Room, GalleryItem, MapAttraction, Testimonial, MenuCategory, WeatherData } from '../types';
 
 export const RESORT_CONFIG = {
-  name: "Munnar Mist Heritage Resort & Spa",
+  name: "Munnar Resort",
   tagline: "Where Luxury Meets the Clouds Above the Emerald Tea Estates",
-  location: "Chithirapuram, Pallivasal Tea Estate, Munnar, Kerala 685565, India",
-  phone: "+91 98765 43210",
-  whatsappNumber: "919876543210", // No plus sign for wa.me link
-  email: "reservations@munnarmistresort.com",
+  location: " Munnar, Kerala 685565, India",
+  phone: "+91 8848034957",
+  whatsappNumber: "918848034957", // No plus sign for wa.me link
+  email: " reservations@munnarresort.com",
   coordinates: {
     lat: 10.0520,
     lng: 77.0380,
@@ -27,7 +27,7 @@ export const ROOMS: Room[] = [
     id: "mist-pool-villa",
     name: "Mist Valley Infinity Pool Villa",
     subtitle: "Private heated infinity pool facing 180° tea estate sunset views",
-    priceINR: 24500,
+    priceINR: 8000,
     priceUSD: 295,
     sizeSqFt: 1100,
     occupancy: "2 Adults + 2 Kids",
@@ -61,7 +61,7 @@ export const ROOMS: Room[] = [
     id: "tea-garden-suite",
     name: "Tea Garden Heritage Suite",
     subtitle: "Colonial charm with floor-to-ceiling glass balconies",
-    priceINR: 16500,
+    priceINR: 6000,
     priceUSD: 198,
     sizeSqFt: 780,
     occupancy: "2 Adults + 1 Child",
@@ -90,9 +90,9 @@ export const ROOMS: Room[] = [
   },
   {
     id: "cloud-nine-treehouse",
-    name: "Cloud Nine Luxury Treehouse",
+    name: "Cloud Nine Luxury house",
     subtitle: "Elevated 30ft above the forest canopy among wild pepper vines",
-    priceINR: 21000,
+    priceINR: 10000,
     priceUSD: 252,
     sizeSqFt: 850,
     occupancy: "2 Adults (Adults Only)",
@@ -121,7 +121,7 @@ export const ROOMS: Room[] = [
   },
   {
     id: "honeymoon-glass-chalet",
-    name: "Misty Honeymoon Glass Chalet",
+    name: "Honeymoon Glass Chalet",
     subtitle: "Romantic sanctuary with indoor heated jacuzzi and star gaze roof",
     priceINR: 19500,
     priceUSD: 235,
@@ -177,7 +177,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: "g4",
-    title: "Authentic Kerala Sadya & Halal Gourmet",
+    title: "Authentic Kerala Sadya &  Gourmet",
     category: "dining",
     image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=1200&q=80",
     caption: "Traditional banana leaf feast prepared with organic garden vegetables and aromatic spices.",
@@ -228,7 +228,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 export const MAP_ATTRACTIONS: MapAttraction[] = [
   {
     id: "resort-loc",
-    name: "Munnar Mist Heritage Resort",
+    name: "Munnar Resort",
     category: "Resort",
     lat: 10.0520,
     lng: 77.0380,
@@ -307,7 +307,7 @@ export const TESTIMONIALS: Testimonial[] = [
     location: "Dubai, UAE",
     rating: 5,
     date: "July 2026",
-    comment: "An absolute paradise on earth! Watching the wild elephants walk across the mist valley right from our private heated pool was magical. WhatsApp service was lightning fast for ordering late night tea and halal barbecue.",
+    comment: "An absolute paradise on earth! Watching the wild elephants walk across the mist valley right from our private heated pool was magical. WhatsApp service was lightning fast for ordering late night tea and barbecue.",
     stayedIn: "Mist Valley Pool Villa",
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
   },
@@ -328,49 +328,111 @@ export const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     date: "May 2026",
     comment: "The treehouse villa suspended in the pepper vines was unbelievable. Waking up above the clouds with fresh brewed tea plucked right from the estate was an unforgettable experience.",
-    stayedIn: "Cloud Nine Luxury Treehouse",
+    stayedIn: "Cloud Nine Luxury house",
     avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80",
   },
 ];
 
-export const DINING_ITEMS: DiningItem[] = [
+export const MENU_CATEGORIES: MenuCategory[] = [
   {
-    id: "d1",
-    name: "Royal Kerala Banana Leaf Sadya",
-    category: "Kerala Special",
-    description: "24-item traditional vegetarian feast served on fresh banana leaf, including Avial, Thoran, Payasam, and Red Matta Rice.",
-    priceINR: 1200,
-    isVegetarian: true,
-    isChefSpecial: true,
-    image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80",
+    category: "BREAKFAST",
+    items: [
+      { name: "Idly, Sambar, Chutney", priceINR: 150 },
+      { name: "Poori Bhaji", priceINR: 150 },
+      { name: "Dosa, Sambar, Chutney", priceINR: 150 },
+    ],
   },
   {
-    id: "d2",
-    name: "Malabar Spice Halal Chicken Biryani",
-    category: "Halal Gourmet",
-    description: "Aromatic Kaima rice dum-cooked with tender halal chicken, ghee, saffron, fried cashews, and fragrant spices.",
-    priceINR: 950,
-    isVegetarian: false,
-    isChefSpecial: true,
-    image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80",
+    category: "SNACKS & STARTERS",
+    items: [
+      { name: "Onion Packoda", priceINR: 150 },
+      { name: "French Fries", priceINR: 150 },
+      { name: "Roasted Pappad", priceINR: 80 },
+      { name: "Masala Pappad", priceINR: 120 },
+      { name: "Peanut Masala", priceINR: 120 },
+      { name: "Green Salad", priceINR: 120 },
+      { name: "Egg Bhurji", priceINR: 120 },
+      { name: "Choice of Omelette", priceINR: 80 },
+      { name: "Veg. Spring Roll", priceINR: 130 },
+    ],
   },
   {
-    id: "d3",
-    name: "Estate Fresh Silver Needle White Tea",
-    category: "Tea & Brews",
-    description: "Hand-harvested first-flush white tea buds from our resort's high-altitude tea bushes.",
-    priceINR: 450,
-    isVegetarian: true,
-    image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80",
+    category: "RICE & NOODLES",
+    items: [
+      { name: "Plain Rice", priceINR: 120 },
+      { name: "Curd Rice", priceINR: 140 },
+      { name: "Tomato Rice", priceINR: 140 },
+      { name: "Jeera Rice", priceINR: 140 },
+      { name: "Pulao Veg.", priceINR: 140 },
+      { name: "Ghee Rice", priceINR: 140 },
+      { name: "Fried Rice - Chicken", priceINR: 300 },
+      { name: "Fried Rice - Egg", priceINR: 230 },
+      { name: "Fried Rice - Veg.", priceINR: 180 },
+      { name: "Schezwan Fried Rice - Chicken", priceINR: 310 },
+      { name: "Schezwan Fried Rice - Egg", priceINR: 240 },
+      { name: "Schezwan Fried Rice - Veg.", priceINR: 190 },
+      { name: "Chicken Biryani", priceINR: 310 },
+    ],
   },
   {
-    id: "d4",
-    name: "Cardamom & Honey Warm Elaneer (Tender Coconut)",
-    category: "Desserts",
-    description: "Silky tender coconut pudding infused with hill cardamom and wild forest honey.",
-    priceINR: 550,
-    isVegetarian: true,
-    image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80",
+    category: "GARDEN VEG",
+    items: [
+      { name: "Dal Fry", priceINR: 200 },
+      { name: "Dal Thadka", priceINR: 200 },
+      { name: "Veg. Khurma", priceINR: 200 },
+      { name: "Malabari Veg. Curry", priceINR: 180 },
+      { name: "Kadai Veg.", priceINR: 190 },
+      { name: "Paneer Butter Masala", priceINR: 270 },
+      { name: "Chilly Paneer (Dry/Gravy)", priceINR: 260 },
+      { name: "Chilly Mushroom", priceINR: 200 },
+      { name: "Gobi Manchurian", priceINR: 200 },
+      { name: "Mushroom Masala", priceINR: 250 },
+      { name: "Aloo Gobi Masala", priceINR: 200 },
+    ],
+  },
+  {
+    category: "BREAD BASKET",
+    items: [
+      { name: "Chappathi", priceINR: 20 },
+      { name: "Kerala Paratha", priceINR: 25 },
+    ],
+  },
+  {
+    category: "CHOICE OF CHICKEN",
+    items: [
+      { name: "Kerala Chicken Curry", priceINR: 300 },
+      { name: "Kadai Chicken", priceINR: 300 },
+      { name: "Chilli Chicken (Dry/Gravy)", priceINR: 300 },
+      { name: "Pepper Chicken Dry", priceINR: 350 },
+      { name: "Dragon Chicken", priceINR: 300 },
+      { name: "Vintage Haven Spl. Chicken", priceINR: 400 },
+      { name: "Chicken Fry (3Pcs)", priceINR: 350 },
+      { name: "Chicken 65", priceINR: 300 },
+      { name: "Chicken Manjoorian (Dry/Gravy)", priceINR: 300 },
+      { name: "Butter Chicken", priceINR: 310 },
+    ],
+  },
+  {
+    category: "DESERT",
+    items: [
+      { name: "Ice Cream", priceINR: 100 },
+      { name: "Gulab Jamun", priceINR: 100 },
+      { name: "Rasagula", priceINR: 100 },
+    ],
+  },
+  {
+    category: "HOT & COLD BEVERAGES",
+    items: [
+      { name: "Tea", priceINR: 25 },
+      { name: "Coffee", priceINR: 30 },
+      { name: "Hot Chocolate", priceINR: 60 },
+      { name: "Horlicks/Boost", priceINR: 60 },
+      { name: "Hot Milk", priceINR: 40 },
+      { name: "Soft Drinks", priceINR: 40 },
+      { name: "Soda", priceINR: 30 },
+      { name: "Mineral Water", priceINR: 20 },
+      { name: "Lassi (Masala/Plain) (Salt/Sweet)", priceINR: 50 },
+    ],
   },
 ];
 
@@ -388,8 +450,8 @@ export const FAQS = [
     answer: "Yes! Our resort is situated near the natural Anakkulam Elephant Corridor. Guests frequently enjoy safe, guided views of elephant herds drinking at nearby mountain streams from our secure observation deck."
   },
   {
-    question: "Is Halal food available at the resort?",
-    answer: "Yes, 100%. Our main restaurant 'The Cloud Spices' serves 100% certified Halal meats, authentic Kerala Malabar cuisine, as well as dedicated pure vegetarian kitchens."
+    question: "Is food available at the resort?",
+    answer: "Yes, 100%. Our main restaurant 'The Cloud Spices' serves authentic Kerala Malabar cuisine, as well as dedicated pure vegetarian kitchens."
   },
   {
     question: "How far is the resort from Cochin International Airport (COK)?",

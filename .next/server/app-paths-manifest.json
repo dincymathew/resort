@@ -1,3 +1,7 @@
 {
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/villas-and-suites/page": "app/villas-and-suites/page.js",
+  "/dining/page": "app/dining/page.js",
+  "/gallery/page": "app/gallery/page.js",
+  "/experiences/page": "app/experiences/page.js"
 }

@@ -36,7 +36,7 @@ export const ExperiencesSection: React.FC<ExperiencesSectionProps> = ({ onOpenWh
       id: 'exp4',
       title: 'Stargazing Campfire & Acoustic Flute',
       subtitle: 'Warm evening bonfire with fresh cardamom brew.',
-      image: 'https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=1000&q=80',
+      image: '/photo/campfire.jfif',
       icon: '🔥',
       details: 'Gather around the stone fire pit under crystal night skies with live local instrumental melodies.',
     },

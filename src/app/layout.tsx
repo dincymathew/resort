@@ -4,7 +4,7 @@ import './globals.css';
 import ClientLayout from './ClientLayout';
 
 export const metadata: Metadata = {
-  title: 'Munnar Mist Heritage Resort & Spa',
+  title: 'Munnar Resort',
   description: 'Experience the beauty of Munnar at our heritage resort and spa.',
 };
 

@@ -17,7 +17,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onOpenWhatsAppBo
     { id: 'villas', label: 'Villas & Suites' },
     { id: 'tea', label: 'Tea Gardens & Views' },
     { id: 'pool', label: 'Infinity Pool' },
-    { id: 'dining', label: 'Halal Cuisine & Dining' },
+    { id: 'dining', label: 'Cuisine & Dining' },
     { id: 'activities', label: 'Wildlife & Activities' },
   ];
 

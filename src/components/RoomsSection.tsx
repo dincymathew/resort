@@ -141,7 +141,7 @@ export const RoomsSection: React.FC<RoomsSectionProps> = ({ onOpenWhatsAppBookin
                       </div>
                       <div className="flex items-center gap-1.5">
                         <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
-                        <span>Halal & Private</span>
+                        <span>Private</span>
                       </div>
                     </div>
 

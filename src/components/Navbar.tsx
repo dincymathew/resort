@@ -34,7 +34,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { name: 'Villas & Suites', href: '/villas-and-suites' },
     { name: 'Photo Gallery', href: '/gallery' },
     { name: 'Location Map', href: '/location' },
-    { name: 'Halal Dining', href: '/dining' },
+    { name: 'Dining', href: '/dining' },
     { name: 'Experiences', href: '/experiences' },
   ];
 

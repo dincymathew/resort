@@ -32,7 +32,7 @@ export const WhatsAppBookingModal: React.FC<WhatsAppBookingModalProps> = ({
     fullName: '',
     email: '',
     phone: '',
-    mealPlan: 'Halal Gourmet Board (Breakfast + Dinner)',
+    mealPlan: ' Gourmet Board (Breakfast + Dinner)',
     specialAddons: ['Private Infinity Pool Heating', 'Complimentary Afternoon High Tea'],
     specialRequests: '',
   });
@@ -71,7 +71,7 @@ export const WhatsAppBookingModal: React.FC<WhatsAppBookingModalProps> = ({
       ? formData.specialAddons.join(', ')
       : 'Standard Villa Services';
 
-    const text = `*MUNNAR MIST HERITAGE RESORT & SPA*
+    const text = `*MUNNAR RESORT*
 *Direct WhatsApp Reservation Request*
 ----------------------------------------
 🏡 *Villa Choice:* ${selectedRoom.name}
@@ -218,7 +218,7 @@ _Sent via Munnar Mist Resort Official Web Portal_`;
                   onChange={(e) => setFormData({ ...formData, mealPlan: e.target.value })}
                   className="w-full bg-[#16271e] border border-emerald-800/60 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400"
                 >
-                  <option value="Halal Gourmet Board (Breakfast + Dinner)">Halal Gourmet (Breakfast + Dinner)</option>
+                  <option value=" Gourmet Board (Breakfast + Dinner)">Gourmet (Breakfast + Dinner)</option>
                   <option value="Bed & Traditional Kerala Breakfast Only">Bed & Kerala Breakfast Only</option>
                   <option value="All-Inclusive Full Board (All Meals + Tea Plucking)">All-Inclusive Full Board</option>
                 </select>
@@ -284,7 +284,7 @@ _Sent via Munnar Mist Resort Official Web Portal_`;
                 <label className="block text-xs font-medium text-slate-300 mb-1">WhatsApp Mobile Number</label>
                 <input
                   type="tel"
-                  placeholder="+91 98765 43210"
+                  placeholder="+91 8848034957"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   className="w-full bg-[#16271e] border border-emerald-800/60 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-400"

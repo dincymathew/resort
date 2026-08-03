@@ -35,7 +35,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <div
           className="absolute inset-0 bg-cover bg-center transition-all duration-1000"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=2000&q=85')`,
+            backgroundImage: `url('/photo/munnar.jfif')`,
           }}
         />
         {/* Dark Emerald Vignette & Fog Gradient Overlays */}
@@ -59,7 +59,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950/80 border border-amber-400/40 text-amber-300 text-xs font-cinzel font-semibold tracking-widest uppercase mb-6 backdrop-blur-md shadow-xl"
         >
           <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-spin" />
-          <span>Munnar, Kerala • 1,600m Altitude Paradise</span>
+          <span>Munnar, Kerala</span>
         </motion.div>
 
         {/* Main Title */}

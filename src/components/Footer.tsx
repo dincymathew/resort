@@ -22,11 +22,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenWhatsAppBooking }) => {
               </span>
             </div>
             <p className="text-xs text-slate-400 leading-relaxed mb-4">
-              Luxury eco-heritage resort perched 1,600m above sea level amidst 120 acres of private tea plantations in Munnar, Kerala.
+              Luxury eco-heritage resort 
             </p>
             <div className="flex items-center gap-2 text-xs text-amber-400 font-cinzel">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <span>100% Certified Halal & Eco-Friendly</span>
+              <span>100% Eco-Friendly</span>
             </div>
           </div>
 
@@ -39,7 +39,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenWhatsAppBooking }) => {
               <li><a href="#villas" className="hover:text-amber-300 transition-colors">Private Pool Villas</a></li>
               <li><a href="#photo-gallery" className="hover:text-amber-300 transition-colors">Scenery Photo Gallery</a></li>
               <li><a href="#location-map" className="hover:text-amber-300 transition-colors">Interactive Munnar Map</a></li>
-              <li><a href="#dining" className="hover:text-amber-300 transition-colors">Halal Gourmet Dining</a></li>
+              <li><a href="#dining" className="hover:text-amber-300 transition-colors">Gourmet Dining</a></li>
               <li><a href="#experiences" className="hover:text-amber-300 transition-colors">Tea Estate & Elephant Walks</a></li>
             </ul>
           </div>
@@ -70,9 +70,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenWhatsAppBooking }) => {
             <h4 className="text-xs font-cinzel font-bold text-amber-300 uppercase tracking-widest mb-4">
               WhatsApp Booking
             </h4>
-            <p className="text-xs text-slate-400 mb-4">
+            {/* <p className="text-xs text-slate-400 mb-4">
               Get instant villa availability, customized honeymoon setups, and airport transfers directly on WhatsApp.
-            </p>
+            </p> */}
             <button
               onClick={onOpenWhatsAppBooking}
               className="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-xs flex items-center justify-center gap-2 uppercase tracking-wider transition-all shadow-lg"
@@ -84,7 +84,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenWhatsAppBooking }) => {
         </div>
 
         <div className="pt-8 border-t border-emerald-950 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-4">
-          <p>© {new Date().getFullYear()} Munnar Mist Heritage Resort & Spa. All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()} Munnar Resort. All Rights Reserved.</p>
           <p className="flex items-center gap-1">
             Crafted with <Heart className="w-3 h-3 text-emerald-500 fill-emerald-500" /> for Munnar Hill Station Travelers
           </p>

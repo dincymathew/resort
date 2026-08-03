@@ -14,8 +14,7 @@ export const FloatingWhatsAppFAB: React.FC<FloatingWhatsAppFABProps> = ({ onOpen
     'Is Mist Pool Villa available this weekend?',
     'Can I get Honeymoon package details?',
     'How do I reach the resort from Cochin Airport?',
-    'Are meals 100% Halal certified?',
-  ];
+      ];
 
   const handleSendQuickQuery = (queryText: string) => {
     const text = `Hi Munnar Mist Resort! ${queryText}`;

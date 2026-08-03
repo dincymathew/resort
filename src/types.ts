@@ -81,3 +81,13 @@ export interface WeatherData {
   windSpeed: number;
   mistLevel: string;
 }
+
+export interface MenuItem {
+  name: string;
+  priceINR: number;
+}
+
+export interface MenuCategory {
+  category: string;
+  items: MenuItem[];
+}
